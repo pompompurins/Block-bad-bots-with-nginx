@@ -1,0 +1,317 @@
+map $http_user_agent $bad_agent {
+        default                      0;
+
+
+
+        # User agents used in Vulnerability scanners // Abusive scraping
+        "~*bxss\.me"                 1;
+        "~*sqlmap\.org"              1;
+        "~*projectdiscovery"         1;
+        "~*Dirbuster"                1;
+        "~*Acunetix"                 1;
+        "~*jorgee"                   1;
+        "~*Vulnnr"                   1;
+        "~*wpscan.com"               1;
+        "~*scrapy\.org"              1;
+        "~*intelx\.io"               1;
+        "~*Charon; Inferno"          1;
+        "~*HeadlessChrome"           1;
+        "~*zgrab/"                   1;
+        "~*Metasploit"               1;
+        "~*RealityCheats/"           1;
+
+
+
+        # HTTP Client Library default user agents
+        "~*/node-fetch"              1;
+        "~*aiohttp/"                 1;
+        "~*Apache-HttpClient"        1;
+        "~^aria2/"                   1;
+        "~^curl/"                    1;
+        "~*Go http package"          1;
+        "~^Go-http-client"           1;
+        "~^GRequests/"               1;
+        "~*grub\.org"                1;
+        "~*GuzzleHttp/"              1;
+        "~*okhttp/"                  1;
+        "~*libcurl"                  1;
+        "~*libwww-perl/"             1;
+        "~*urllib/"                  1;
+        "~^python-requests"          1;
+        "~^Python-urllib"            1;
+        "~^Python/"                  1;
+        "~*PG_SLEEP"                 1;
+        "~*HTTrack"                  1;
+        "~*Java/"                    1;
+        "~*zend_http_client/"        1;
+        "~*Snoopy"                   1;
+        "~^BinGet"                   1;
+        "~^htdig/"                   1;
+        "~^Wget"                     1;
+        "~^PHP/"                     1;
+        "~^amaya/"                   1;
+        "~^Java1"                    1;
+
+
+
+        # User-agents that are from 12+ Years ago for browsers/programs (Nobody real should be using these)
+        "~*America Online Browser"   1;
+        "~*AOLBuild"                 1;
+        "~*Mandriva"                 1;
+        "~*PlayStation Portable"     1;
+        "~*\(jaunty\) Firefox"       1;
+        "~*\(maverick\) Firefox"     1;
+        "~*\(intrepid\) Firefox"     1;
+        "~*Ubuntu/hardy"             1;
+        "~*\(hardy\) Firefox"        1;
+        "~*\(lucid\) Firefox"        1;
+        "~*\(Gloria\) Firefox"       1;
+        "~*\(karmic\) Firefox"       1;
+        "~*Netscape"                 1;
+        "~*Namoroka/"                1;
+        "~*Windows NT 5\.1"          1;
+        "~*Windows NT 5\.2"          1;
+        "~*SonyEricsson"             1;
+        "~*OfficeLiveConnector"      1;
+        "~*Media Center PC"          1;
+        "~*Windows 95"               1;
+        "~*Windows95"                1;
+        "~*Windows 98"               1;
+        "~*Windows 2000"             1;
+        "~*Windows 2000"             1;
+        "~*WindowsCE"                1;
+        "~*Windows CE"               1;
+        "~*Windows ME"               1;
+        "~*Windows XP"               1;
+        "~*MSIE 4\.0"                1;
+        "~*MSIE 5\."                 1;
+        "~*MSIE 6\.0"                1;
+        "~*MSIE 7\.0"                1;
+        "~*MSIE 8\.0"                1;
+        "~*MSIE 9\.0"                1;
+        "~*Symbian OS"               1;
+        "~*SymbianOS"                1;
+        "~*Jakarta"                  1;
+        "~*HTC_Dream"                1;
+        "~*HTC_Touch_"               1;
+        "~*GulperBot"                1;
+        "~*Sundance"                 1;
+        "~^ELinks"                   1;
+        "~^NCSA Mosaic"              1;
+        "~*email/news client"        1;
+        "~*EmailWolf"                1;
+        "~*Sleipnir/"                1;
+        "~*Dalvik/"                  1;
+        "~*HTML editor"              1;
+        "~*XiaoMi/MiuiBrowser"       1;
+        "~*FirePHP/4Chrome"          1;
+        "~*iTunes/"                  1;
+        "~*Roku/DVP"                 1;
+        "~*Galeon/"                  1;
+        "~*trojaner/DRM2"            1;
+        "~*WorldWideweb"             1;
+        "~*Alexa Toolbar"            1;
+        "~*Beamrise/"                1;
+        "~*Dillo/"                   1;
+        "~*UP\.Browser/"             1;
+        "~*bluefish"                 1;
+        "~*Camino"                   1;
+        "~*Safari/532\.4"            1;
+        "~*Midori/0\."               1;
+        "~*midori/1\."               1;
+        "~*Gecko/2001"               1;
+        "~*Gecko/2002"               1;
+        "~*Gecko/2003"               1;
+        "~*Gecko/2004"               1;
+        "~*Gecko/2005"               1;
+        "~*Gecko/2006"               1;
+        "~*Gecko/2007"               1;
+        "~*Gecko/2008"               1;
+        "~*Gecko/2009"               1;
+        "~*EudoraWeb"                1;
+        "~*NokiaBrowser/8"           1;
+        "~*Android 1\."              1;
+        "~*PLAYSTATION 3"            1;
+        "~*Epiphany/2"               1;
+        "~*Android 0\."              1;
+        "~*Android 2\."              1;
+        "~*Version/5\.1\.7 Safari/"  1;
+        "~^Mozilla/2\.0"             1;
+        "~^Mozilla/3\.0"             1;
+        "~^Modzilla/"                1;
+        "~^Mozilla/1"                1;
+        "~^Mozilla/0"                1;
+        "~*Chrome/0"                 1;
+        "~*\(Swiftfox\)"             1;
+        "~*Sprint:PPC-6700"          1;
+        "~*\.NET CLR 1\.0"           1;
+        "~*Mozilla/4.0[1-9]"         1; # Block Mozilla versions 4.00 - 4.09
+        "~*Mozilla/4.[1-9]"          1; # Block Mozilla versions 4.1 - 4.9
+        "~*Chrome/[1-9]\."           1; # Block chrome versions 1 - 9
+        "~*Chrome/[1-6][0-9]\."      1; # Block chrome versions 10 - 69
+        "~*Firefox/[0-9]\."          1; # Block firefox versions 0 - 9
+        "~*Firefox/[1-6][0-9]\."     1; # Block firefox versions 10 - 69
+        "~*Opera/[1-9]\."            1; # Block Opera versions 1 - 9
+        "~*Opera [1-9]\."            1; # Block Opera versions 1 - 9
+        "~*Opera/1[0-9]\."           1; # Block Opera versions 10 - 19
+        "~*Opera 1[0-9]\."           1; # Block Opera versions 10 - 19
+        "~*iPhone OS [1-9]_[0-9]"    1; # Block iPhone IOS Versions 1_0 - 9_9
+        "~*CPU OS [1-9]_[0-9]"       1; # Block iPad IOS Versions 1_0 - 9_9
+        "~*Konqueror/[1-4]\.[0-9]"   1; # Block Konqueror 1.0 - 4.9
+        "~*Bloglines/"               1;
+        "~*Configuration/CLDC-1\."   1;
+        "~*AndroidDownloadManager"   1;
+        "~*AmigaVoyager/"            1;
+        "~*Download Demon/"          1;
+        "~*Offline Explorer"         1;
+        "~^Avant Browser/1"          1;
+        "~*AmigaOS"                  1;
+        "~*Comodo_Dragon/16"         1;
+        "~^J-PHONE/"                 1;
+        "~*Iceape/"                  1;
+        "~*OmniWeb/v"                1;
+        "~^Uzbl \(Webkit"            1;
+        "~^MagpieRSS/"               1;
+        "~^Midori/0\.1"              1;
+        "~^Midori/0\.2"              1;
+        "~^NetSurf/"                 1;
+        "~^Windows-Media-Player"     1;
+        "~^Links \("                 1;
+        "~^Lynx"                     1;
+        "~^WebCopier"                1;
+        "~^Links/"                   1;
+        "~*NetFront/3\.4"            1;
+        "~*BlackBerry 9"             1;
+
+
+
+        # Bots that we don't need visiting out website (Make sure to comment anything you don't wish to be blocked)
+        "~*eventures\.vc"            1;
+        "~*code.google.com"          1;
+        "~*Charlotte/"               1;
+        "~*freshping\.io"            1;
+        "~*Gaisbot/"                 1;
+        "~*Hotzonu"                  1;
+        "~*apimon\.de"               1;
+        "~*AwarioSmartBot/"          1;
+        "~*WISEnutbot\.com"          1;
+        "~*CSSCheck"                 1;
+        "~*Mixcat Crawler"           1;
+        "~*headers_userage"          1;
+        "~*dotnetdotcom\.org"        1;
+        "~*gais\.cs\.ccu\.edu\.tw"   1;
+        "~^Screaming Frog SEO"       1;
+        "~^NetSystemsResearch"       1;
+        "~^Iframely"                 1;
+        "~^Gregarius/"               1;
+        "~^FAST-WebCrawler/"         1;
+        "~^Comos/"                   1;
+        "~^EsperanzaBot"             1;
+        "~^Eurobot"                  1;
+        "~^EvaalSE"                  1;
+        "~^Exabot"                   1;
+        "~^FARK\.com"                1;
+        "~*FAST Enterprise Crawler"  1;
+        "~^GurujiBot"                1;
+        "~^Jaxified Bot"             1;
+        "~^NG-Search/"               1;
+        "~^LeechCraft"               1;
+        "~^Link Valet Online"        1;
+        "~^MetaURI API"              1;
+        "~^findlinks/"               1;
+        "~^iCab/"                    1;
+        "~^holmes/"                  1;
+        "~^webcollage/"              1;
+        "~^truwoGPS/"                1;
+        "~^larbin_"                  1;
+        "~^yacybot"                  1;
+        "~^Xenu Link Sleuth"         1;
+        "~^W3C_Validator"            1;
+        "~^OmniExplorer_Bot"         1;
+        "~^NutchCVS/"                1;
+        "~^FeedFetcher-Google"       1;
+        "~^FyberSpider"              1;
+        "~^GSiteCrawler"             1;
+        "~^InfoWizards Reciprocal"   1;
+        "~^iCCrawler"                1;
+        "~^genieBot"                 1;
+        "~^boitho\.com"              1;
+        "~^Vortex/"                  1;
+        "~^UniversalFeedParser"      1;
+        "~^TurnitinBot"              1;
+        "~^TERRYMozilla"             1;
+        "~^Speedy Spider"            1;
+        "~^Shim-Crawler"             1;
+        "~^PostPost/"                1;
+        "~^CatchBot"                 1;
+        "~^ConveraCrawler"           1;
+        "~^Seekbot"                  1;
+        "~^Feedfetcher-Google"       1;
+        "~^everyfeed-spider"         1;
+        "~^BillyBobBot"              1;
+        "~^AU-MIC/"                  1;
+        "~^AU-MIC/"                  1;
+        "~^NetResearchServer"        1;
+        "~^IRLbot/"                  1;
+        "~^Accoona"                  1;
+        "~^Jyxobot/"                 1;
+        "~^LinkWalker"               1;
+        "~^Pompos"                   1;
+        "~^Moreoverbot"              1;
+        "~ABACHOBot"                 1;
+        "~^MJ12bot"                  1;
+        "~^voyager/"                 1;
+
+
+
+        # User-agents used in various booters//scripts, which can't be blocked easily due to how vague they are
+        "Mozilla/5.0 (Windows; U; Windows NT 6.1; rv:2.2) Gecko/20110201"                                                     1;
+        "Mozilla/5.0 (Windows; U; Windows NT 6.1; it; rv:2.0b4) Gecko/20100818"                                               1;
+        "Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US) AppleWebKit/533.1 (KHTML, like Gecko) Maxthon/3.0.8.2 Safari/533.1"  1;
+
+
+
+        # Random Stuff, products that don't exist, and misc.
+        "~*portalmmm/"               1;
+        "~^w3m/"                     1;
+        "CloudFlare/1.0"             1; # Doesn't exist, seen in some DDoS attacks
+        "Crawler@alexa.com"          1;
+        "FavIconizer"                1;
+        "Mozilla/5.0"                1; # Seen in DDoS attacks, a real User-agent will never _only_ be "Mozilla/5.0" with nothing else
+        "undefined"                  1;
+        "~*user agents strings"      1;
+        "~*useragentstring\.com"     1;
+        "~*nook browser/"            1;
+        "INETDEX BOT"                1;
+        "~^(.{1})$"                  1; # Any user-agent that is only a single character
+        ""                           1; # Any user-agent that is nothing
+        "~^!"                        1; # If it starts with an exclamation
+
+
+}
+
+
+# Make sure to uncomment the wordpress stuff if you're using wordpress. This just stops some stupid automated scanning bots from sending un-needed requests.
+map $request_uri $bad_dir {
+        default                      0;
+        "~*^/xmlrpc.php"             1;
+        "~*^/wp-login\.php"          1;
+        "~*/wp-includes/"            1;
+        "~*/wp-admin/"               1;
+        "~*/wp-content/"             1;
+        "~*/wp-json/"                1;
+        "~*wlwmanifest\.xml"         1;
+        "~*autodiscover\.xml"        1;
+}
+
+
+
+
+map $http_referer $bad_referer {
+        hostnames;
+        default                      0;
+        "~\[rand\]"                  1; # Seen in DDoS Attacks
+        "~fbi\.com"                  1; # Seen in DDoS Attacks 
+        "~fbi\.gov"                  1; # Seen in DDoS Attacks
+        "~cia\.gov"                  1; # Seen in DDoS Attacks
+}
