@@ -11,7 +11,7 @@ map $http_user_agent $bad_agent {
         "~*Acunetix"                 1;
         "~*jorgee"                   1;
         "~*Vulnnr"                   1;
-        "~*wpscan.com"               1;
+        "~*wpscan\.com"              1;
         "~*scrapy\.org"              1;
         "~*intelx\.io"               1;
         "~*Charon; Inferno"          1;
@@ -83,12 +83,12 @@ map $http_user_agent $bad_agent {
         "~*Windows CE"               1;
         "~*Windows ME"               1;
         "~*Windows XP"               1;
-        "~*MSIE 4\.0"                1;
+        "~*MSIE 4\."                 1;
         "~*MSIE 5\."                 1;
-        "~*MSIE 6\.0"                1;
-        "~*MSIE 7\.0"                1;
-        "~*MSIE 8\.0"                1;
-        "~*MSIE 9\.0"                1;
+        "~*MSIE 6\."                 1;
+        "~*MSIE 7\."                 1;
+        "~*MSIE 8\."                 1;
+        "~*MSIE 9\."                 1;
         "~*Symbian OS"               1;
         "~*SymbianOS"                1;
         "~*Jakarta"                  1;
