@@ -19,6 +19,7 @@ map $http_user_agent $bad_agent {
         "~*zgrab/"                   1;
         "~*Metasploit"               1;
         "~*RealityCheats/"           1;
+        "~*PG_SLEEP"                 1;
 
 
 
@@ -40,7 +41,6 @@ map $http_user_agent $bad_agent {
         "~^python-requests"          1;
         "~^Python-urllib"            1;
         "~^Python/"                  1;
-        "~*PG_SLEEP"                 1;
         "~*HTTrack"                  1;
         "~*Java/"                    1;
         "~*zend_http_client/"        1;
