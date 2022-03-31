@@ -1,4 +1,4 @@
-# Block-bad-bots-with-nginx
+# Block bad bots with nginx
 
 Battle tested, can handle ~40k requests a second without problem if you have a decent server.
 
